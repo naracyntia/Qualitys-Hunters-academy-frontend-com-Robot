@@ -47,7 +47,7 @@ jobs:
       - name: Carregamento arquivo de testes
         uses: actions/upload-pages-artifact@v1
         with:
-          path: results/
+          path: /results
  
       - name: Deploy dos testes
         id: deployment

@@ -62,7 +62,7 @@ Passo 7 – clicar em novo cadastro
 
 Passo 8 – cadastrar Diretoria
     ${palavra_randomica}    Generate Random String        length=9    chars=[LETTERS]
-    ${palavra_randomica}    Convert To Lower Case         ${palavra_randomica}
+    ${palavra_randomica}    convert to lower case         ${palavra_randomica}
     Set Test Variable           ${DIRETORIA}              ${palavra_randomica}
     Wait Until Element Is Visible                         locator=${NomediretoriaInput}
     Input Text                                            locator=${NomediretoriaInput}    text=${DIRETORIA}  
