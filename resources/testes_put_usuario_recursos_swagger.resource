@@ -24,17 +24,6 @@ ${buttonsalvarnovo}          //button[@id='save']
 
 *** Keywords ***
 
-Criar email em massa
-    ${palavra_randomica}    Generate Random String    length=8    chars=[LETTERS]
-    ${palavra_randomica}    Convert To Lower Case     ${palavra_randomica}
-    Set Test Variable      ${EMAIL_TEST}              ${palavra_randomica}@qacoders.com.br        
-    Log                    ${EMAIL_TEST} 
-
-Criar usuario em massa
-    ${palavra_randomica}    Generate Random String    length=8    chars=[LETTERS]
-    ${palavra_randomica}    Convert To Lower Case     ${palavra_randomica}
-    Set Test Variable      ${USUARIO}              ${palavra_randomica}Marquez        
-    Log                    ${USUARIO}
 
 Abrir navegador
     Open Browser                browser=headlesschrome
@@ -81,13 +70,21 @@ Passo 7 – clicar em editar
      
 
 Passo 8 – cadastrar nome completo
-    Wait Until Element Is Visible    locator=${NomecompletoInput}
-    Input Text                       locator=${NomecompletoInput}    text=${USUARIO} 
+    ${palavra_randomica}               Generate Random String          length=8    chars=[LETTERS]
+    ${palavra_randomica}               Convert To Lower Case           ${palavra_randomica}
+    Set Test Variable                  ${USUARIO}                      ${palavra_randomica}Marquez        
+    Log                                ${USUARIO}
+    Wait Until Element Is Visible      locator=${NomecompletoInput}
+    Input Text                         locator=${NomecompletoInput}    text=${USUARIO} 
     
 
-Passo 9 – cadastrar email    
+Passo 9 – cadastrar email  
+    ${palavra_randomica}               Generate Random String          length=8    chars=[LETTERS]
+    ${palavra_randomica}               Convert To Lower Case           ${palavra_randomica}
+    Set Test Variable                  ${EMAIL_TEST}                   ${palavra_randomica}@qacoders.com.br        
+    Log                                ${EMAIL_TEST}   
     Wait Until Element Is Visible    locator=${novoemailInput}
-    Input Text                       locator=${novoemailInput}       text=${EMAIL_TEST} 
+    Input Text                       locator=${novoemailInput}         text=${EMAIL_TEST} 
     
 
 Passo 10 – clicar no botão salvar

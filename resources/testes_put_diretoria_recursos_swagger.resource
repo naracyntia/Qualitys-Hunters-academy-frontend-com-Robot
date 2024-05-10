@@ -79,9 +79,9 @@ Passo 8 – clicar editar cadastro
 
 
 Passo 9 – escolher id
-    ${palavra_randomica}    Generate Random String        length=9    chars=[LETTERS]
-    ${palavra_randomica}    Convert To Lower Case         ${palavra_randomica}
-    Set Test Variable           ${DIRETORIA}              ${palavra_randomica}
+    ${palavra_randomica}        Generate Random String        length=9    chars=[LETTERS]
+    ${palavra_randomica}        Convert To Lower Case         ${palavra_randomica}
+    Set Test Variable           ${DIRETORIA}                  ${palavra_randomica}
     Wait Until Element Is Visible    locator=${NomediretoriaInput}
     Input Text                       locator=${NomediretoriaInput}         text=${DIRETORIA} 
     
