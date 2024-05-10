@@ -40,27 +40,27 @@ Passo 1 – acessar a página de login Qa.Coders Academy
 Passo 2 – digitar e-mail
     Wait Until Element Is Visible     locator=${emailInput}
     Input Text                        locator=${emailInput}    text=sysadmin@qacoders.com
-    Sleep    1s
+    
 
 Passo 3 – digitar senha 
     Wait Until Element Is Visible     locator=${passwordinput}
     Input Text                        locator=${passwordinput}    text=1234@Test
-    Sleep    1s 
+     
 
 Passo 4 – clicar no botão entrar
     Wait Until Element Is Visible     locator=${buttonEntrar}
     Click Button                      locator=${buttonEntrar}
-    Sleep    1s
+    
 
 Passo 5 – clicar em cadastro
     Wait Until Element Is Visible      locator=${cadastrolink}
     Click Element                      locator=${cadastrolink}
-    Sleep    2s
+    
 
 Passo 6 – clicar em Diretorias
     Wait Until Element Is Visible      locator=${buttondiretorias}
     Click Element                      locator=${buttondiretorias}
-    Sleep    2s    
+       
 
 
 Passo 7 – buscar pagina seguinte
@@ -70,18 +70,18 @@ Passo 7 – buscar pagina seguinte
     Click Button                            locator=${opennextpage1}
     Wait Until Element Is Visible           locator=${opennextpage1}            
     Click Button                            locator=${opennextpage1}
-    Sleep    2s
+    
 
 Passo 8 – clicar editar cadastro
     Wait Until Element Is Visible           locator=${buttoneditar}
     Click Button                             locator=${buttoneditar}
-    Sleep    2s 
+     
 
 
 Passo 9 – escolher id
     Wait Until Element Is Visible    locator=${NomediretoriaInput}
     Input Text                       locator=${NomediretoriaInput}         text=Nara QuAlitys Hunters 
-    Sleep    2s 
+    
 
 Passo 10 – clicar no botão salvar  
     Wait Until Element Is Visible      locator=${buttonsalvar} 

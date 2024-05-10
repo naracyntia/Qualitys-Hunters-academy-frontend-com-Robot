@@ -79,13 +79,20 @@ Passo 7 – clicar em novo cadastro
     Sleep    2s 
 
 Passo 8 – cadastrar nome completo
-    Wait Until Element Is Visible    locator=${NomecompletoInput}
-    Input Text                       locator=${NomecompletoInput}    text=${NOME} 
+    ${palavra_randomica}    generate random string     length=9    chars=[LETTERS]
+    ${palavra_randomica}    convert to lower case      ${palavra_randomica}
+    set test variable       ${NOME}                    ${palavra_randomica}
+    Wait Until Element Is Visible                      locator=${NomecompletoInput}
+    Input Text                                         locator=${NomecompletoInput}     text=${NOME} 
     Sleep    2s
 
-Passo 9 – cadastrar email    
-    Wait Until Element Is Visible    locator=${novoemailInput}
-    Input Text                       locator=${novoemailInput}    text=${EMAIL}
+Passo 9 – cadastrar email
+    ${palavra_randomica}    Generate Random String    length=9    chars=[LETTERS]
+    ${palavra_randomica}    Convert To Lower Case     ${palavra_randomica}
+    ${palavra_randomica}    Convert To Lower Case     ${palavra_randomica}
+    set test variable       ${EMAIL}                  ${palavra_randomica}@narateste.com   
+    Wait Until Element Is Visible                     locator=${novoemailInput}
+    Input Text                                        locator=${novoemailInput}    text=${EMAIL}
     Sleep    2s
 
 Passo 10 – cadastrar perfil de acesso
@@ -94,8 +101,11 @@ Passo 10 – cadastrar perfil de acesso
     Sleep    2s
 
 Passo 11- cadastrar cpf
-    Wait Until Element Is Visible    locator=${cpfInput}
-    Input Text                       locator=${cpfInput}    text=${CPF}
+    ${numero_randomico}    Generate Random String    length=11    chars=[NUMBERS]
+    ${numero_randomico}    convert to lower case     ${numero_randomico}
+    Set Test Variable      ${CPF}                    ${numero_randomico}
+    Wait Until Element Is Visible                    locator=${cpfInput}
+    Input Text                                       locator=${cpfInput}    text=${CPF}
     Sleep    2s
 
 Passo 12 – cadastrar senha
@@ -116,11 +126,5 @@ Passo 14 – clicar no botão salvar
     Sleep    5s
 
 
-Gerar massa de dados nome
-    ${palavra_randomica}    Generate Random String    length=9    chars=[LETTERS]
-    ${palavra_randomica}    Convert To Lower Case    ${palavra_randomica}
-    ${palavra_randomica}    Convert To Lower Case    ${palavra_randomica}@narateste.com
-    Set Test Variable    ${NOME}
-    Set Test Variable    ${EMAIL}
-    ${numero_randomico}    Generate Random String    length=11    chars=[NUMBERS]
-    Set Test Variable    ${CPF}
+
+    
