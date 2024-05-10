@@ -1,7 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    XML
-Library    RequestsLibrary
 Library    String
  
 

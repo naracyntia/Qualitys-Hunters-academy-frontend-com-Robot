@@ -1,7 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    XML
-Library    RequestsLibrary
 Library    String
 
 
@@ -24,7 +23,7 @@ ${TIMEOUT}                   30
 
 *** Keywords ***
 Abrir navegador
-    Open Browser                #browser=headlesschrome
+    Open Browser                browser=headlesschrome
     Maximize Browser Window
 
 Fechar navegador
