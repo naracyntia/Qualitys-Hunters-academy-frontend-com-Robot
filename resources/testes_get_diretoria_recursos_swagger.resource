@@ -3,7 +3,7 @@ Library    SeleniumLibrary
 Library    XML
 Library    RequestsLibrary
 Library    String
-Library    Faker
+ 
 
 
 
