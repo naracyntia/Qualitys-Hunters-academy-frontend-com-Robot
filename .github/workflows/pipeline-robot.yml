@@ -40,15 +40,29 @@ jobs:
         with:
           name: resultado-testes
           path: results/
- 
+
+   deploy:
+    name: configurar site
+    runs-on: ubuntu-latest
+    if: always()
+    needs:
+    - test
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: https://github.com/naracyntia/Testes-de-frontend-com-Robot-Qualitys-Hunters-academy-front-robot/report.html
+    steps: 
       - name: configurar site
         uses: actions/configure-pages@v2
- 
+
       - name: Carregamento arquivo de testes
         uses: actions/upload-pages-artifact@v1
         with:
-          path: results/
- 
+          path: ./
+
       - name: Deploy dos testes
         id: deployment
         uses: actions/deploy-pages@v1
