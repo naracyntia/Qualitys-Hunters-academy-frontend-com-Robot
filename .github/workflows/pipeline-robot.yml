@@ -5,15 +5,7 @@ on: push
 jobs:
    test:
     runs-on: ubuntu-latest
- 
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: https://github.com/naracyntia/Testes-de-frontend-com-Robot-Qualitys-Hunters-academy-front-robot/report.html
- 
+  
     steps:
       - name: clone do projeto
         uses: actions/checkout@v4
@@ -53,7 +45,9 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: https://github.com/naracyntia/Testes-de-frontend-com-Robot-Qualitys-Hunters-academy-front-robot/report.html
+      url: https://naracyntia.github.io/Testes-de-frontend-com-Robot-Qualitys-Hunters-academy-front-robot/report.html
+           
+       
     steps: 
       - name: configurar site
         uses: actions/configure-pages@v2
