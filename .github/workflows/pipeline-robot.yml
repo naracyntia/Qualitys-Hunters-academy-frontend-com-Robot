@@ -55,7 +55,7 @@ jobs:
       - name: Download Artifacts
         uses: actions/download-artifact@v4
         with: 
-          name: robot-framework-report
+          name: resultado-testes
           path: results/
   
       - name: Upload artifact
